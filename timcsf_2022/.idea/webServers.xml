@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="de80eaf5-b60f-40bc-a58e-c934ac96a176" name="Serveur_TIM" url="http://localhost/Sites/timcsf_2022">
+        <fileTransfer mountedRoot="C:\MAMP\htdocs\Sites\timcsf_2022" accessType="MOUNT" port="0" />
+      </webServer>
+    </option>
+  </component>
+</project>
