@@ -5,6 +5,13 @@
       <webServer id="de80eaf5-b60f-40bc-a58e-c934ac96a176" name="Serveur_TIM" url="http://localhost/Sites/timcsf_2022">
         <fileTransfer mountedRoot="C:\MAMP\htdocs\Sites\timcsf_2022" accessType="MOUNT" port="0" />
       </webServer>
+      <webServer id="994b341d-d88a-43bb-8afb-9bf4cf8b8dd4" name="Serveur_TIM_timunix" url="http://timunix2.cegep-ste-foy.qc.ca/~msuslu/timcsf_2022">
+        <fileTransfer rootFolder="/home/2019/msuslu/public_html/timcsf_2022" accessType="SFTP" host="timunix2.cegep-ste-foy.qc.ca" port="22" sshConfigId="d8d500c9-b5b6-485e-a49a-c083c1b3d6c1" sshConfig="msuslu@timunix2.cegep-ste-foy.qc.ca:22 password">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" keepAliveTimeout="0" passiveMode="true" shareSSLContext="true" />
+          </advancedOptions>
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

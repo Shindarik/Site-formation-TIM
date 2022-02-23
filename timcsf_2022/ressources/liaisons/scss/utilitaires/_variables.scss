@@ -14,14 +14,38 @@
   src: 	url('../fonts/Futura.ttc') format('truetype');
 }
 
-$fontePrimaire : Futura, sans-serif;
-$fonteSecondaire : Arial, sans-serif;
+@font-face {
+  font-family: Rubik, sans-serif;
+  src: 	url('../fonts/Rubik-VariableFont_wght.woff2') format('woff2'),
+        url('../fonts/Rubik-VariableFont_wght.woff') format('woff'),
+        url('../fonts/Rubik-VariableFont_wght.ttf') format('truetype');
+  font-style: normal;
+}
+
+@font-face {
+  font-family: Rubik, sans-serif;
+  src: 	url('../fonts/Rubik-Italic-VariableFont_wght.woff2') format('woff2'),
+        url('../fonts/Rubik-Italic-VariableFont_wght.woff') format('woff'),
+        url('../fonts/Rubik-Italic-VariableFont_wght.ttf') format('truetype');
+  font-style: italic;
+}
+
+$fontePrimaire : Rubik, sans-serif;
+$fonteSecondaire : Rubik, sans-serif;
 
 /** Palette de couleurs **/
 // Utiliser http://chir.ag/projects/name-that-color pour obtenir des noms uniques et mémorisables
 // Permettez-vous d'utiliser un nom de variable plus explicite si la suggestion de name-that-color est trop étrange
 
 /* Couleurs de base */
+
+$blancPrimaire: #FFFAFF;
+$rougePrimaire: #EF5B5B;
+$bleuPrimaire: #52DEE5;
+$jaunePrimaire: #FFD400;
+$noirPrimaire: #4E4D5C;
+$noir: #111111;
+
 $bleuMoyen: #358ae0;
 $bleuPale: #68a8e8;
 $vertLime: #bbd531;

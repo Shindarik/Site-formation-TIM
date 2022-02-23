@@ -1,16 +1,22 @@
 .entete{
-  max-width: 960px;
-  margin: 0 auto;
-  background-color: #eee;
-  border-bottom: 1px solid #323;
+  position: fixed;
+  z-index: 2;
+  width: 100%;
+  background-color: transparent;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  transition: all 0.25S ease;
 
-  h1{
-    margin: 0;
-    padding: 10px;
-  }
+  &__logo{
+    width: 10%;
 
-  &__titre, &__slogan{
+    img{
+      width: 100%;
+    }
+
     margin: 0;
-    padding: 10px;
+    padding: 20px;
   }
 }

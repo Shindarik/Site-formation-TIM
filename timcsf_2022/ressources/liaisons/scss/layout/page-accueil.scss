@@ -1,0 +1,370 @@
+main{
+  background-image: url("../images/rectangles.svg");
+  background-position: center;
+  background-size: cover;
+  background-repeat: no-repeat;
+}
+
+
+.titre{
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h1 {
+    font-size: 5rem;
+    text-align: center;
+    text-shadow: 4px 3px 0px $bleuPrimaire;
+
+    span {
+      color: $rougePrimaire;
+    }
+
+    &::before {
+      content: '[';
+      margin: 20px;
+    }
+
+    &::after {
+      content: ']';
+      margin: 20px;
+    }
+
+  }
+
+  .titre__subtitle{
+    margin: 20px;
+    text-align: center;
+    font-size: 2rem;
+    letter-spacing: 15px;
+  }
+
+  .btnDiscovery{
+    margin-top: 50px;
+    text-decoration: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 10px;
+    border-radius: 50px;
+    background-color: $jaunePrimaire;
+
+    span{
+      font-size: 1.5rem;
+      color: $noir;
+      text-decoration: none;
+      margin: 10px;
+    }
+
+  }
+
+}
+
+.intro__section{
+  width: 90%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+
+  .intro__textes{
+    width: 50%;
+
+    .intro__title{
+      width:fit-content;
+      position: relative;
+      font-size: 2.5rem;
+
+      &::after{
+        content: '';
+        position: absolute;
+        right: -10%;
+        bottom: -20%;
+        height: 100%;
+        width: 7px;
+        border-radius: 50px;
+        background-color: $bleuPrimaire;
+      }
+
+      &::before{
+        content: '';
+        position: absolute;
+        right: -10%;
+        bottom: -20%;
+        height: 7px;
+        width: 35px;
+        border-radius: 50px;
+        background-color: $bleuPrimaire;
+      }
+
+    }
+
+    .intro__description{
+      text-align: justify;
+      font-size: 1.5rem;
+    }
+
+  }
+
+  .intro__image{
+    border-radius: 20px;
+  }
+
+}
+
+.slider{
+  margin-top: 10vh;
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2{
+    align-self: flex-end;
+    float: right;
+    width:fit-content;
+    position: relative;
+    font-size: 2.5rem;
+
+    &::after{
+      content: '';
+      position: absolute;
+      left: -7%;
+      bottom: -20%;
+      height: 100%;
+      width: 7px;
+      border-radius: 50px;
+      background-color: $rougePrimaire;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: -7%;
+      bottom: -20%;
+      height: 7px;
+      width: 35px;
+      border-radius: 50px;
+      background-color: $rougePrimaire;
+    }
+
+
+  }
+
+  &__projets{
+    margin-top: 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+
+    &>img{
+      cursor: pointer;
+      max-width: 50px;
+      transition: all 0.25s ease;
+
+      &:hover{
+        filter: drop-shadow(10px 0px 0px $noir);
+      }
+    }
+
+    .slider__list{
+      width: 90%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      color: $blancPrimaire;
+      list-style: none;
+      margin: 0 30px;
+      padding: 0;
+
+      .slide{
+        position: relative;
+        top: 0;
+        left: 0;
+        min-height: 80vh;
+        width: 90%;
+        list-style: none;
+        margin: 0;
+        background-color: $noirPrimaire;
+        border-radius: 10px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: all 0.5s ease;
+
+        &::before{
+          content: '';
+          position: absolute;
+          border-radius: 10px;
+          z-index: -1;
+          top: 5%;
+          left: 2%;
+          width: 100%;
+          height: 100%;
+          background-color: $bleuPrimaire;
+          transition: all 0.5s ease;
+        }
+
+        &::after{
+          content: '';
+          position: absolute;
+          border-radius: 10px;
+          z-index: -2;
+          top: 10%;
+          left: 4%;
+          width: 100%;
+          height: 100%;
+          background-color: $rougePrimaire;
+          transition: all 0.5s ease;
+        }
+
+
+        &__entete{
+          width: 90%;
+          display: flex;
+          justify-content: space-between;
+          align-items: center;
+
+          *{
+            font-size: 2.5rem;
+          }
+        }
+
+        &__corps{
+          width: 100%;
+          padding: 20px;
+          display: flex;
+          justify-content: space-evenly;
+          align-items: center;
+
+          &Image{
+            width: 45%;
+            border-radius: 10px;
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.3);
+          }
+
+          &Texte{
+            color: $blancPrimaire;
+            font-size: 1.25rem;
+            text-align: justify;
+            width: 50%;
+            padding: 0 10px;
+
+            & a{
+              color: $bleuPrimaire;
+            }
+
+            &>a{
+              text-decoration: none;
+              color: $noir;
+              background-color: $jaunePrimaire;
+              padding: 10px;
+              border-radius: 50px;
+              float: right;
+              transition: all 0.25s ease;
+
+              &:hover{
+                transform: scale(1.1);
+              }
+            }
+
+            abbr{
+              font-style: italic;
+            }
+          }
+        }
+      }
+    }
+  }
+
+  .dots{
+    width: 20%;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+    margin: 75px 0;
+
+    .dot{
+      list-style: none;
+      width: 20px;
+      height: 20px;
+      padding: 3px;
+      border-radius: 100%;
+      border: 3px solid $noir;
+      transition: all 0.25s ease;
+    }
+  }
+}
+
+.contact{
+  width: 90%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2{
+    position: relative;
+    text-align: center;
+
+
+    &::after{
+      content: '';
+      position: absolute;
+      left: -7%;
+      bottom: -20%;
+      height: 100%;
+      width: 7px;
+      border-radius: 50px;
+      background-color: $bleuPrimaire;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: -7%;
+      bottom: -20%;
+      height: 7px;
+      width: 35px;
+      border-radius: 50px;
+      background-color: $bleuPrimaire;
+    }
+  }
+
+  &__corps{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    .contact__part{
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      width: 50%;
+      margin: 0 20px;
+
+      .contact__textes{
+        text-align: justify;
+        padding: 0 30px;
+      }
+
+      .contact__image{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        text-decoration: none;
+        color: $jaunePrimaire;
+        text-align: center;
+        img{
+          max-width: 100px;
+        }
+      }
+    }
+  }
+
+}
