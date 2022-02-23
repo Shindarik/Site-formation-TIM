@@ -97,6 +97,33 @@ get_header();
         <?php wp_reset_query();     // Restore global post data stomped by the_post(). ?>
     </div>
 
+
+    <div class="section2">
+        <div class="formulaire">
+            <h2>Écris-nous !</h2>
+            <form action="">
+                <label for="name">Prénom et nom</label>
+                <input type="text" name="name" id="name" placeholder="Entre ton prénom et ton nom ...">
+
+                <label for="responsable">Responsable</label>
+                <select name="responsable" id="responsable">
+                    <option value="0" selected disabled hidden>Choisis un responsable</option>
+                    <option value="1">Sylvain Lamoureux</option>
+                </select>
+
+                <label for="mail">Email</label>
+                <input type="email" name="mail" id="mail" placeholder="Entre ton email ...">
+
+                <label for="message">Message</label>
+                <textarea name="message" id="message" cols="30" rows="10" style="resize:none;" placeholder="Entre ton message ..."></textarea>
+            </form>
+        </div>
+        <div class="map">
+            <h2>Où nous trouver ?</h2>
+            <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2731.928523268118!2d-71.28838738439772!3d46.786012779138844!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4cb896dea093d777%3A0xf81581457f682cd6!2sC%C3%A9gep%20de%20Sainte-Foy!5e0!3m2!1sfr!2sca!4v1645647065773!5m2!1sfr!2sca" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+        </div>
+    </div>
+
 </main>
 
 <?php

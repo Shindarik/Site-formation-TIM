@@ -1036,7 +1036,52 @@ h1 span {
   transition: all 0.25s ease;
 }
 .section1 .responsables .ligne a:hover {
-  filter: drop-shadow(0px 0px 3px rgba(0, 0, 0, 0.5));
+  filter: drop-shadow(0px 0px 3px #111111);
+}
+
+.section2 {
+  margin-top: 20vh;
+  width: 80%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: flex-start;
+}
+.section2 .formulaire {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+}
+.section2 .formulaire h2 {
+  position: relative;
+  width: fit-content;
+}
+.section2 .formulaire h2::after {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: -20%;
+  height: 100%;
+  width: 7px;
+  border-radius: 50px;
+  background-color: #52DEE5;
+}
+.section2 .formulaire h2::before {
+  content: "";
+  position: absolute;
+  left: -10%;
+  bottom: -20%;
+  height: 7px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: #52DEE5;
+}
+.section2 .formulaire form {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
 }
 
 .piedDePage {
@@ -1098,6 +1143,8 @@ h1 span {
   justify-content: space-between;
   align-items: center;
   transition: all 0.25S ease;
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
 }
 .entete__logo {
   width: 10%;
@@ -1160,31 +1207,6 @@ h1 span {
   text-decoration: none;
   color: #111111;
   font-size: 1.5rem;
-}
-.navigation .darkMode, .navigation__secondaire .darkMode {
-  position: relative;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  padding: 0 10px;
-  width: 75px;
-  background-color: grey;
-  border-radius: 100px;
-  cursor: pointer;
-}
-.navigation .darkMode::after, .navigation__secondaire .darkMode::after {
-  content: "";
-  position: absolute;
-  left: 5%;
-  top: 50%;
-  width: 40%;
-  padding-top: 40%;
-  transform: translateY(-50%);
-  background-color: #FFFAFF;
-  border-radius: 100%;
-}
-.navigation .darkMode img, .navigation__secondaire .darkMode img {
-  width: 15px;
 }
 
 .navigation__secondaire a {
