@@ -1,0 +1,78 @@
+.stagesGrid{
+  margin: 50px 0px;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-template-rows: repeat(2, 1fr);
+  row-gap: 20px;
+  column-gap: 20px;
+  grid-template-areas:
+            "a c"
+            "b c";
+
+  @media (max-width: 768px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+    div{
+      width: 100%;
+    }
+  }
+
+  .sujet{
+    grid-area: a;
+  }
+
+  .question{
+    border-color: $jaunePrimaire;
+    grid-area: b;
+  }
+
+  .employeur{
+    border-color: $rougePrimaire;
+    grid-area: c;
+
+    p{
+      margin: 10px 0 20px;
+    }
+  }
+
+  div{
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 20px;
+    background-color: $blancPrimaire;
+    border: solid 5px $bleuPrimaire;
+    border-radius: 10px;
+
+    a{
+      margin: auto;
+      width: fit-content;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+      font-weight: bold;
+      color: $noir;
+      background-color: $jaunePrimaire;
+      border: solid $jaunePrimaire;
+      padding: 10px;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+
+      &:hover{
+        background-color: $blancPrimaire;
+      }
+
+      span{
+        font-weight: bold;
+        margin: 0 10px;
+      }
+
+    }
+  }
+
+}

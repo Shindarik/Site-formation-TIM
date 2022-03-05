@@ -35,7 +35,7 @@ get_header();
                 ?>
 
                 <picture>
-                    <source media="(max-width: 601px)" srcset="<?= $image_info['sizes']['thumbnail']?>">
+                    <source media="(min-width: 1440px)" srcset="<?= $image_info['sizes']['large']?>">
                     <img class="intro__image" src="<?= $image_info['sizes']['medium']?>" alt="<?= $image_info['alt']?>">
                 </picture>
                     <?php }?>
@@ -167,6 +167,11 @@ get_header();
                             <div class="contact__textes">
                                 <h3><?php echo get_field("titre", 631);?></h3>
                                 <p><?php echo get_field("texte_descriptif", 631);?></p>
+                                <?php
+                                    $lien = get_field_object("lien_responsable");
+                                    $post_object = $lien['value'];
+                                ?>
+                                <a href="<?= add_query_arg('ID', $post_object->ID, get_the_permalink(5))?>"><?php echo $post_object->post_title;?></a>
                             </div>
                             <a class="contact__image" href="#">
                                 <?php
@@ -198,7 +203,7 @@ get_header();
             <?php // endwhile; ?>
         <?php endif; ?>
         <?php wp_reset_query();     // Restore global post data stomped by the_post(). ?>
-        <script src="<?php echo get_template_directory_uri();?>/liaisons/js/sliderAccueil.js" defer></script>
+        <script src="<?php echo get_template_directory_uri();?>/liaisons/js/slider.js" defer></script>
     </main>
 
 <?php

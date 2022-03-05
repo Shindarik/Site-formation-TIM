@@ -49,10 +49,129 @@
   }
 }
 
+.navigation{
+  @media (max-width: 768px) {
+    display: none;
+    visibility: hidden;
+  }
+}
+
 .navigation__secondaire a{
   color: $blancPrimaire !important;
 }
 
 .navigation__secondaire li::after{
   background-color: $blancPrimaire;
+}
+
+
+.navBurger{
+  display: none;
+  visibility: hidden;
+  margin: 20px;
+
+  .burgerBtnOpen{
+    width: 40px;
+    height: 40px;
+    border: solid $noir;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease;
+
+    &:hover{
+      border-radius: 100%;
+    }
+  }
+
+  .burgerBtnClose{
+    width: 40px;
+    height: 40px;
+    color: $blancPrimaire;
+    font-weight: 900;
+    border: solid $blancPrimaire;
+    background: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.25s ease;
+
+    &:hover{
+      border-radius: 100%;
+    }
+  }
+
+  @media (max-width: 768px) {
+    display: block;
+    visibility: visible;
+  }
+
+  .navigation{
+    position: absolute;
+    z-index: 5;
+    display: flex;
+    visibility: visible;
+    flex-direction: column;
+    justify-content: flex-start;
+    align-items: center;
+    top: 0;
+    right: -100%;
+    padding: 20px;
+    min-width: 200px;
+    max-width: 300px;
+    width: 30vw;
+    height: 100vh;
+    background-color: $noir;
+    transition: all 0.5s ease;
+
+    ul{
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-content: center;
+      list-style: none;
+      padding: 0;
+      margin-top: 20px;
+      width: fit-content;
+    }
+
+    li{
+      position: relative;
+      margin: 20px 0;
+      width: fit-content;
+      -webkit-transition: all 0.5s ease;
+      -moz-transition: all 0.5s ease;
+      -ms-transition: all 0.5s ease;
+      -o-transition: all 0.5s ease;
+      transition: all 0.5s ease;
+
+      &::after{
+        content: '';
+        position: absolute;
+        left: 0;
+        bottom: -20%;
+        width: 0%;
+        height: 3px;
+        border-radius: 50px;
+        background-color: $blancPrimaire;
+        -webkit-transition: all 0.25s ease;
+        -moz-transition: all 0.25s ease;
+        -ms-transition: all 0.25s ease;
+        -o-transition: all 0.25s ease;
+        transition: all 0.25s ease;
+      }
+
+      &:hover::after{
+        width: 100%;
+      }
+
+      a {
+        text-decoration: none;
+        color: $blancPrimaire;
+        font-size: 1.5rem;
+      }
+
+    }
+  }
 }

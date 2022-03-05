@@ -1,0 +1,569 @@
+.section__temoignages{
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+
+  @media (max-width: 768px) {
+    flex-direction: column;
+  }
+
+  &__textes{
+    width: 80%;
+
+    .textes__title{
+        width:fit-content;
+        position: relative;
+        font-size: 2.5rem;
+
+        &::after{
+          content: '';
+          position: absolute;
+          right: -10%;
+          bottom: -20%;
+          height: 100%;
+          width: 7px;
+          border-radius: 50px;
+          background-color: $bleuPrimaire;
+        }
+
+        &::before{
+          content: '';
+          position: absolute;
+          right: -10%;
+          bottom: -20%;
+          height: 7px;
+          width: 35px;
+          border-radius: 50px;
+          background-color: $bleuPrimaire;
+        }
+
+    }
+
+    .textes__description{
+      text-align: justify;
+    }
+
+    .boutons{
+      margin: 50px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+
+      button{
+        filter: opacity(30%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        border: none;
+        padding: 20px;
+        font-weight: 900;
+        color: $blancPrimaire;
+        transition: all 0.25s ease;
+
+        &:hover{
+          filter: opacity(100%);
+          outline: solid 3px $noir;
+        }
+
+        &.active{
+          filter: opacity(100%);
+        }
+      }
+
+      button[data-card=integration]{
+        border-radius: 10px 0px 0px 10px;
+        background-color: $rougePrimaire;
+        width: 25%;
+      }
+
+      button[data-card=programmation]{
+        background: linear-gradient(90deg, #EF5B5B -112.5%, #52DEE5 467%);
+        width: 25%;
+      }
+
+      button[data-card=conception]{
+        background: linear-gradient(90deg, #EF5B5B -240%, #52DEE5 338%);
+        width: 25%;
+      }
+
+      button[data-card=medias]{
+        background: linear-gradient(90deg, #EF5B5B -365%, #52DEE5 217%);
+        width: 15%;
+      }
+
+      button[data-card=autres]{
+        border-radius: 0px 10px 10px 0px;
+        background-color: $bleuPrimaire;
+        width: 10%;
+      }
+    }
+
+    a{
+      margin: auto;
+      width: fit-content;
+      display: flex;
+      justify-content: space-around;
+      align-items: center;
+      text-decoration: none;
+      color: $noir;
+      background-color: $jaunePrimaire;
+      border: solid $jaunePrimaire;
+      padding: 20px;
+      border-radius: 10px;
+      transition: all 0.25s ease;
+
+      &:hover{
+        background-color: $blancPrimaire;
+      }
+
+      span{
+        font-weight: bold;
+        margin: 0 10px;
+      }
+    }
+  }
+
+  .temoignages{
+    margin-top: 100px;
+    width: 80%;
+    padding: 50px;
+
+    @media (max-width: 768px) {
+      padding: 0;
+    }
+
+    .card{
+      display: none;
+      border-radius: 10px;
+      border: solid $bleuPrimaire;
+      background-color: $blancPrimaire;
+      overflow: hidden;
+      box-shadow: 3px 4px 4px rgba(0, 0, 0, 0.25);
+
+      &.active{
+        display: block;
+        animation: appear 0.5s ease;
+      }
+
+      @keyframes appear {
+
+        0%{
+          transform: scale(0.75);
+        }
+
+        100%{
+          transform: scale(1);
+        }
+
+      }
+
+      &__titre{
+        position: relative;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 0 0 10px 10px;
+        padding: 30px 0;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.25);
+
+        h3{
+          color: white;
+          position: relative;
+          z-index: 1;
+          font-size: 2.25rem;
+          font-weight: 900;
+          text-shadow: 1px 2px 0px $bleuPrimaire;
+        }
+
+        img{
+          position: absolute;
+          width: 100%;
+          left: 0;
+          top: 0;
+          filter: brightness(50%);
+          z-index: 0;
+        }
+      }
+
+      &__textes{
+        padding: 20px;
+
+        ul{
+          display: flex;
+          flex-wrap: wrap;
+
+          @media (max-width: 600px) {
+            display: block;
+          }
+
+          li{
+            width: 50%;
+            @media (max-width: 600px) {
+              width: 100%;
+            }
+          }
+        }
+      }
+    }
+  }
+}
+
+.section2{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  h2{
+    width: fit-content;
+    align-self: flex-end;
+    position: relative;
+    font-size: 2.5rem;
+
+    &::after{
+      content: '';
+      position: absolute;
+      left: -5%;
+      bottom: -20%;
+      height: 100%;
+      width: 7px;
+      border-radius: 50px;
+      background-color: $rougePrimaire;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      left: -5%;
+      bottom: -20%;
+      height: 7px;
+      width: 35px;
+      border-radius: 50px;
+      background-color: $rougePrimaire;
+    }
+  }
+
+  .contenus{
+    width: 100%;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+
+    .medias{
+      width: 50%;
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(2, 1fr);
+      row-gap: 20px;
+      column-gap: 20px;
+      grid-template-areas:
+            "a a"
+            "a a"
+            "b c";
+
+      video{
+        width: 100%;
+        border-radius: 10px;
+        grid-area: a;
+      }
+
+      .image1{
+        border-radius: 10px;
+        width: 100%;
+        grid-area: b;
+      }
+
+      .image2{
+        border-radius: 10px;
+        width: 100%;
+        grid-area: c;
+      }
+    }
+
+    .stats{
+      width: 40%;
+
+      &1,&2,&3,&4{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin: 50px 0;
+
+        p{
+          font-weight: bold;
+          font-size: 1.5rem;
+          text-align: center;
+          width: 50%;
+
+          @media (max-width: 768px) {
+            width: fit-content;
+          }
+        }
+
+        &*{
+          display: flex;
+          justify-content: center;
+          align-items: center;
+        }
+
+        img{
+          @media (max-width: 768px) {
+            width: 75px;
+          }
+        }
+
+      }
+    }
+  }
+}
+
+.slider.formation{
+
+  width: 100%;
+
+  @media (max-width: 1024px) {
+    margin: 0;
+  }
+
+  .slide{
+    height: auto !important;
+
+    .poste{
+      font-style: italic;
+    }
+  }
+
+  img{
+    width: 30% !important;
+  }
+}
+
+.section4{
+  h2{
+    width: fit-content;
+    position: relative;
+    text-align: center;
+    font-size: 2.5rem;
+
+
+    &::after{
+      content: '';
+      position: absolute;
+      right: -5%;
+      bottom: -20%;
+      height: 100%;
+      width: 7px;
+      border-radius: 50px;
+      background-color: $bleuPrimaire;
+    }
+
+    &::before{
+      content: '';
+      position: absolute;
+      right: -5%;
+      bottom: -20%;
+      height: 7px;
+      width: 35px;
+      border-radius: 50px;
+      background-color: $bleuPrimaire;
+    }
+  }
+
+  .jobGrid{
+    margin: 50px 0;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    row-gap: 20px;
+    column-gap: 20px;
+    grid-template-areas:
+            "a c"
+            "b c";
+
+    fieldset{
+      padding: 50px;
+      background-color: $blancPrimaire;
+
+      legend{
+        width: fit-content;
+        text-align: center;
+        font-weight: 900;
+      }
+
+      span{
+        font-weight: bold;
+      }
+
+      hr{
+        border: solid 2px $rougePrimaire;
+        border-radius: 50px;
+        margin: 30px 0;
+      }
+
+      a{
+        margin: auto;
+        width: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-decoration: none;
+        color: $noir;
+        background-color: $jaunePrimaire;
+        border: solid $jaunePrimaire;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+
+        &:hover{
+          background-color: $blancPrimaire;
+        }
+
+        span{
+          margin: 0 10px;
+        }
+
+      }
+    }
+
+    .jobPart1{
+      border: solid 5px $bleuPrimaire;
+      grid-area: a;
+    }
+
+    .jobPart2{
+      border: solid 5px $jaunePrimaire;
+      grid-area: b;
+    }
+
+    .jobPart3{
+      border: solid 5px $rougePrimaire;
+      grid-area: c;
+    }
+  }
+}
+
+.section5{
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  margin: 20px 0 100px;
+
+  @media (max-width: 1024px) {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .inscription{
+    width: 45%;
+
+    @media (max-width: 1024px) {
+      width: 100%
+    }
+
+    div{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: repeat(3, 1fr);
+      grid-template-areas:
+            "a a"
+            "a a"
+            "b c";
+
+      @media (max-width: 1024px) {
+        grid-template-rows: repeat(2, 1fr);
+        grid-template-areas:
+            "a a"
+            "b c";
+      }
+
+      p{
+        grid-area: a;
+      }
+
+      .contactLink{
+        grid-area: c !important;
+      }
+
+      a{
+        margin: 20px 0;
+        grid-area: b;
+        width: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-decoration: none;
+        color: $noir;
+        background-color: $jaunePrimaire;
+        border: solid $jaunePrimaire;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+
+        @media (max-width: 1024px) {
+          margin: auto;
+        }
+
+
+        &:hover{
+          background-color: $blancPrimaire;
+        }
+
+        span{
+          margin: 0 10px;
+        }
+
+      }
+    }
+  }
+
+  .etudiantJour{
+    width: 45%;
+
+    @media (max-width: 1024px) {
+      width: 100%
+    }
+
+    h2{
+      &:before{
+        left: -5%;
+        background-color: $rougePrimaire;
+      }
+
+      &:after{
+        left: -5%;
+        background-color: $rougePrimaire;
+      }
+    }
+
+    p{
+      margin: 40px 0;
+    }
+
+    a{
+        grid-area: b;
+        width: fit-content;
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
+        text-decoration: none;
+        color: $noir;
+        background-color: $jaunePrimaire;
+        border: solid $jaunePrimaire;
+        padding: 10px;
+        border-radius: 10px;
+        transition: all 0.25s ease;
+
+        &:hover{
+          background-color: $blancPrimaire;
+        }
+
+      }
+  }
+}

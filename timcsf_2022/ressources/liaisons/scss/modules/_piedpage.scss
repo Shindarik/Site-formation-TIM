@@ -3,9 +3,19 @@
   width: 100%;
   background-color: $noir;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
   justify-content: space-between;
   align-items: center;
+
+  .contenus{
+    position: relative;
+    width: 100%;
+    background-color: $noir;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+  }
 
   .social{
     img{
@@ -14,19 +24,42 @@
     margin-left: 20px;
   }
 
+  .mentions{
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 10px;
+    margin: 10px 0;
+  }
+
   .credit{
-    width: 15%;
     text-align: center;
     font-size: 1.25rem;
     color: $blancPrimaire;
+
+    @media (max-width: 1024px) {
+      font-size: .75rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   .copyright{
-    position: absolute;
-    bottom: 10px;
-    right: 5px;
-    font-size: 1rem;
+    font-size: 1.25rem;
+    text-align: center;
     color: $blancPrimaire;
+
+    @media (max-width: 1024px) {
+      font-size: .75rem;
+    }
+
+    @media (max-width: 768px) {
+      font-size: 1rem;
+    }
   }
 
   .logos{
@@ -35,6 +68,10 @@
     justify-content: flex-start;
     align-items: center;
     width: 30%;
+
+    @media (max-width: 425px) {
+      flex-direction: column;
+    }
 
     span{
       font-size: 2rem;
@@ -45,6 +82,8 @@
     .piedDePage__logo{
 
       width: 35%;
+      min-width: 75px;
+      max-width: 150px;
 
       img{
         width: 100%;
@@ -52,6 +91,11 @@
 
       margin: 0;
       padding: 20px;
+
+      @media (max-width: 768px) {
+        padding: 10px;
+      }
+
     }
   }
 

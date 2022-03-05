@@ -157,9 +157,129 @@
         register_post_type( 'temoignages', $args );
     }
 
+    function tim_formation_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Section Formation ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Formations - sections', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Formations - sections'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les section de la page formation'),
+            'view_item'           => __( 'Voir les sections formation'),
+            'add_new_item'        => __( 'Ajouter une nouvelle section'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer une section'),
+            'update_item'         => __( 'Modifier une section'),
+            'search_items'        => __( 'Rechercher une section'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Sections - Formation'),
+            'description'         => __( 'Toutes les sections de formation'),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'formation'),
+        );
+
+        register_post_type( 'formation', $args );
+    }
+
+    function tim_stages_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Section Stages ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Stages - sections', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Stages - sections'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les section de la page formation'),
+            'view_item'           => __( 'Voir les sections formation'),
+            'add_new_item'        => __( 'Ajouter une nouvelle section'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer une section'),
+            'update_item'         => __( 'Modifier une section'),
+            'search_items'        => __( 'Rechercher une section'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Sections - Stages'),
+            'description'         => __( 'Toutes les sections de stages'),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'stages'),
+        );
+
+        register_post_type( 'stages', $args );
+    }
+
+    function tim_filtres_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Section Projets Filtres ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Filtres projets - sections', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Projets filtres - sections'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les filtres de la page projets'),
+            'view_item'           => __( 'Voir les sections formation'),
+            'add_new_item'        => __( 'Ajouter une nouvelle section'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer une section'),
+            'update_item'         => __( 'Modifier une section'),
+            'search_items'        => __( 'Rechercher une section'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Sections - Projets Filtres'),
+            'description'         => __( 'Toutes les sections de projets '),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'filtres'),
+        );
+
+        register_post_type( 'filtres', $args );
+    }
+
     add_action( 'init', 'tim_responsable_custom_post', 0 );
     add_action( 'init', 'tim_accueil_custom_post', 0 );
+    add_action( 'init', 'tim_formation_custom_post', 0 );
+    add_action( 'init', 'tim_stages_custom_post', 0 );
     add_action( 'init', 'tim_projets_custom_post', 0 );
+    add_action( 'init', 'tim_filtres_custom_post', 0 );
     add_action( 'init', 'tim_temoignages_custom_post', 0 );
 
     add_theme_support('post-thumbnails');

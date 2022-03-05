@@ -19,6 +19,16 @@
             <nav class="navigation">
                 <?php wp_nav_menu(array('theme_location'=>'principal'));?>
             </nav>
+
+            <nav class="navBurger">
+                <button class="burgerBtnOpen">
+                    <img src="<?php echo get_template_directory_uri();?>/liaisons/images/burger.svg" alt="">
+                </button>
+                <div class="navigation">
+                    <button class="burgerBtnClose">X</button>
+                    <?php wp_nav_menu(array('theme_location'=>'principal'));?>
+                </div>
+            </nav>
         <?php }?>
     </header>
 

@@ -1,4 +1,4 @@
-*{
+*, *::before, *::after{
   box-sizing: border-box;
   font-family: Rubik, sans-serif;
 }
@@ -26,4 +26,12 @@ body{
   justify-content: center;
   align-items: center;
 
+}
+
+h2{
+  font-weight: 700;
+}
+
+a{
+  text-align: center;
 }
