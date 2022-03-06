@@ -274,11 +274,51 @@
         register_post_type( 'filtres', $args );
     }
 
+    function tim_finissants_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Les Finissants ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Finissants', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Les Finissants'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les finissants des TIM'),
+            'view_item'           => __( 'Voir les finissants'),
+            'add_new_item'        => __( 'Ajouter un finissant'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer un finissant'),
+            'update_item'         => __( 'Modifier un finissant'),
+            'search_items'        => __( 'Rechercher un finissant'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Les Finissants'),
+            'description'         => __( 'Tout les finissants '),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'finissants'),
+        );
+
+        register_post_type( 'finissants', $args );
+    }
+
     add_action( 'init', 'tim_responsable_custom_post', 0 );
     add_action( 'init', 'tim_accueil_custom_post', 0 );
     add_action( 'init', 'tim_formation_custom_post', 0 );
     add_action( 'init', 'tim_stages_custom_post', 0 );
     add_action( 'init', 'tim_projets_custom_post', 0 );
+    add_action( 'init', 'tim_finissants_custom_post', 0 );
     add_action( 'init', 'tim_filtres_custom_post', 0 );
     add_action( 'init', 'tim_temoignages_custom_post', 0 );
 
