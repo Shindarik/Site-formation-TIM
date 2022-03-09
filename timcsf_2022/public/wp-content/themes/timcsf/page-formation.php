@@ -320,7 +320,7 @@ get_header();
                     $lien=get_field_object("lien_responsable", 844);
                     $post_object=$lien["value"];
                     ?>
-                    <a href="<?= add_query_arg('ID', $post_object->ID, get_the_permalink(5));?>">
+                    <a href="<?= add_query_arg('ID', $post_object->ID, get_the_permalink(5));?>#formulaire">
                         Contacter <?php echo $post_object->post_title;?>
                     </a>
                 </div>

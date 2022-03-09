@@ -1952,6 +1952,190 @@ h1 span {
   margin: 0 10px;
 }
 
+.section1.projets .pageBtn {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 75px 0;
+}
+.section1.projets .pageBtn a {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 5%;
+  min-width: 40px;
+}
+.section1.projets .pageBtn a img {
+  width: 100%;
+  transition: all 0.25s ease;
+}
+.section1.projets .pageBtn a img:hover {
+  filter: drop-shadow(10px 0px 0px #111111);
+}
+.section1.projets .pageBtn span {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 90%;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: bold;
+}
+.section1.projets .projetsGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  row-gap: 25px;
+  column-gap: 25px;
+}
+@media (max-width: 768px) {
+  .section1.projets .projetsGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (max-width: 425px) {
+  .section1.projets .projetsGrid {
+    grid-template-columns: 1fr;
+  }
+}
+.section1.projets .projetsGrid .cardProjets {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  background-color: #FFFAFF;
+  border: solid #EF5B5B;
+  border-radius: 10px;
+  box-shadow: 3px 5px 10px rgba(0, 0, 0, 0.2);
+  padding: 20px;
+  text-decoration: none;
+  color: #111111;
+  overflow: hidden;
+}
+.section1.projets .projetsGrid .cardProjets img {
+  border: solid #EF5B5B;
+  width: 100%;
+  max-height: 150px;
+  border-radius: 10px;
+}
+.section1.projets .projetsGrid .cardProjets h3, .section1.projets .projetsGrid .cardProjets p {
+  align-self: flex-start;
+}
+.section1.projets .projetsGrid .cardProjets p {
+  margin-top: 0;
+}
+.section1.projets .projetsGrid .cardProjets p i {
+  font-weight: 300;
+}
+.section1.projets .projetsGrid .cardProjets .cachet {
+  background-color: #EF5B5B;
+  padding: 10px;
+  border-radius: 10px 0 0 0;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  font-size: 1rem;
+}
+.section1.projets .projetsGrid .cardProjets:last-child {
+  grid-column-start: 2;
+}
+@media (max-width: 768px) {
+  .section1.projets .projetsGrid .cardProjets:last-child {
+    grid-column-start: auto;
+  }
+}
+
+.section1.projet .sous-titre {
+  font-weight: 300;
+  margin: 30px 0 100px;
+}
+.section1.projet .mediasProjet {
+  margin: 50px 0;
+  width: 80%;
+}
+.section1.projet .textesProjet {
+  margin: 0 0 50px;
+}
+.section1.projet .technologiesProjet {
+  margin: 0 0 50px;
+}
+.section1.projet .urlProjet {
+  text-decoration: none;
+  color: #111111;
+  padding: 10px;
+  background-color: #FFD400;
+  border-radius: 10px;
+  border: solid #FFD400;
+  transition: all 0.25s ease;
+}
+.section1.projet .urlProjet:hover {
+  background-color: #FFFAFF;
+}
+.section1.projet h3 {
+  position: relative;
+  width: fit-content;
+  font-size: 2.5rem;
+  font-weight: 900;
+  margin: 100px 0 50px;
+}
+.section1.projet h3::after {
+  content: "";
+  position: absolute;
+  right: -15%;
+  bottom: -20%;
+  height: 90%;
+  width: 7px;
+  border-radius: 50px;
+  background-color: #52DEE5;
+}
+.section1.projet h3::before {
+  content: "";
+  position: absolute;
+  right: -15%;
+  bottom: -20%;
+  height: 7px;
+  width: 30px;
+  border-radius: 50px;
+  background-color: #52DEE5;
+}
+.section1.projet .students {
+  background-color: #FFFAFF;
+  border: solid 3px #EF5B5B;
+  padding: 20px;
+  border-radius: 10px;
+  margin-bottom: 100px;
+}
+.section1.projet .students .student {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.section1.projet .students .student h4 {
+  font-size: 2rem;
+}
+.section1.projet .students .student .studentContenu {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+@media (max-width: 768px) {
+  .section1.projet .students .student .studentContenu {
+    flex-direction: column;
+  }
+}
+.section1.projet .students .student .studentContenu li {
+  line-height: 30px;
+}
+.section1.projet .students .student .studentContenu img {
+  border: solid #52DEE5;
+  border-radius: 10px;
+  width: 30%;
+  max-width: 250px;
+  min-width: 125px;
+}
+
 .piedDePage {
   position: relative;
   width: 100%;

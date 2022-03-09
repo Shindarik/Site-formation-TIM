@@ -1,3 +1,104 @@
-.section.projets{
+.section1.projets{
 
+    .pageBtn{
+      width: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin: 75px 0;
+
+      a{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 5%;
+        min-width: 40px;
+        img{
+          width: 100%;
+          transition: all 0.25s ease;
+
+          &:hover{
+            filter: drop-shadow(10px 0px 0px $noir);
+          }
+        }
+      }
+
+      span{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        width: 90%;
+        margin: auto;
+        font-size: 2rem;
+        font-weight: bold;
+      }
+
+    }
+
+    .projetsGrid{
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      row-gap: 25px;
+      column-gap: 25px;
+
+      @media (max-width: 768px) {
+        grid-template-columns: repeat(2, 1fr);
+      }
+
+      @media (max-width: 425px) {
+        grid-template-columns: 1fr;
+      }
+
+      .cardProjets{
+        position: relative;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        background-color: $blancPrimaire;
+        border: solid $rougePrimaire;
+        border-radius: 10px;
+        box-shadow: 3px 5px 10px rgba(0,0,0,0.2);
+        padding: 20px;
+        text-decoration: none;
+        color: $noir;
+        overflow: hidden;
+
+        img{
+          border: solid $rougePrimaire;
+          width: 100%;
+          max-height: 150px;
+          border-radius: 10px;
+        }
+
+        h3, p{
+          align-self: flex-start;
+        }
+
+        p{
+          margin-top: 0;
+
+          i{
+            font-weight: 300;
+          }
+        }
+
+        .cachet{
+          background-color: $rougePrimaire;
+          padding: 10px;
+          border-radius: 10px 0 0 0;
+          position: absolute;
+          bottom: 0;
+          right: 0;
+          font-size: 1rem;
+        }
+
+        &:last-child{
+          grid-column-start: 2;
+          @media (max-width: 768px) {
+            grid-column-start: auto;
+          }
+        }
+      }
+    }
 }

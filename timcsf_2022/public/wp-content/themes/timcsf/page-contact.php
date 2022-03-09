@@ -230,7 +230,7 @@ get_header();
     </div>
 
 
-    <div class="section2">
+    <div class="section2" id="formulaire">
         <div class="formulaire" id="contact">
             <h2>Écris-nous !</h2>
 

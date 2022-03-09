@@ -313,12 +313,52 @@
         register_post_type( 'finissants', $args );
     }
 
+    function tim_cours_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Les Cours ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Cours', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Les Cours'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les cours des TIM'),
+            'view_item'           => __( 'Voir les cours'),
+            'add_new_item'        => __( 'Ajouter un cours'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer un cours'),
+            'update_item'         => __( 'Modifier un cours'),
+            'search_items'        => __( 'Rechercher un cours'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Les Cours'),
+            'description'         => __( 'Tout les cours '),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'cours'),
+        );
+
+        register_post_type( 'cours', $args );
+    }
+
     add_action( 'init', 'tim_responsable_custom_post', 0 );
     add_action( 'init', 'tim_accueil_custom_post', 0 );
     add_action( 'init', 'tim_formation_custom_post', 0 );
     add_action( 'init', 'tim_stages_custom_post', 0 );
     add_action( 'init', 'tim_projets_custom_post', 0 );
     add_action( 'init', 'tim_finissants_custom_post', 0 );
+    add_action( 'init', 'tim_cours_custom_post', 0 );
     add_action( 'init', 'tim_filtres_custom_post', 0 );
     add_action( 'init', 'tim_temoignages_custom_post', 0 );
 
