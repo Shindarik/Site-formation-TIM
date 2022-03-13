@@ -63,11 +63,17 @@
         text-decoration: none;
         color: $noir;
         overflow: hidden;
+        transition: all 0.25s ease;
+
+        &:hover{
+          transform: scale(1.1);
+        }
 
         img{
           border: solid $rougePrimaire;
           width: 100%;
-          max-height: 150px;
+          min-height: 150px;
+          max-height: 250px;
           border-radius: 10px;
         }
 

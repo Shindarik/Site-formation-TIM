@@ -121,25 +121,31 @@ get_header();
             <h2><?php echo get_field("titre",734);?></h2>
             <div class="contenus">
                 <div class="medias">
-                    <video controls preload="metadata">
                         <?php $chemin=wp_upload_dir();?>
+                    <video controls preload="metadata" poster="<?php echo $chemin['baseurl'];?>/2022/03/Vignette_PROGRAMME TIM_1.jpg">
                         <source src="<?php echo $chemin['baseurl'];?>/2022/03/presentationVideo.mp4" type="video/mp4">
                         <source src="<?php echo $chemin['baseurl'];?>/2022/03/presentationVideo.webmhd.webm" type="video/webm">
                         <p>Votre navigateur ne prend pas en charge les vidéos HTML5.
-                            Voici <a href="<?php echo wp_upload_dir();?>/2022/03/presentationVideo.mp4">un lien pour télécharger la vidéo</a>.</p>
+                            Voici <a href="<?php echo $chemin['baseurl'];?>/2022/03/presentationVideo.mp4">un lien pour télécharger la vidéo</a>.</p>
                     </video>
 
                     <?php
                         $image_info = get_field("image1", 734);
                         if($image_info!=null){
                     ?>
-                    <img src="<?php echo $image_info['sizes']['medium'];?>" alt="<?php $image_info['alt']?>" class="image1">
+                            <picture>
+                                <source media="(min-width: 1200px)" srcset="<?php echo $image_info['sizes']['large'];?>">
+                                <img src="<?php echo $image_info['sizes']['medium'];?>" alt="<?php $image_info['alt']?>" class="image1">
+                            </picture>
                     <?php }?>
                     <?php
                     $image_info = get_field("image2", 734);
                     if($image_info!=null){
                         ?>
-                        <img src="<?php echo $image_info['sizes']['medium'];?>" alt="<?php $image_info['alt']?>" class="image2">
+                        <picture>
+                            <source media="(min-width: 1200px)" srcset="<?php echo $image_info['sizes']['large'];?>">
+                            <img src="<?php echo $image_info['sizes']['medium'];?>" alt="<?php $image_info['alt']?>" class="image2">
+                        </picture>
                     <?php }?>
                 </div>
                 <div class="stats">
@@ -187,19 +193,11 @@ get_header();
             // query
             $args=array(
                 'post_type'=>'temoignages',
-                'post_per_page'=>'9',
-                'post_status'=>'publish'
+                'post_per_page'=>'3',
+                'post_status'=>'publish',
+                'orderby'=>'rand'
             );
             $the_query = new WP_Query( $args );
-            $slide1Id = random_int(777, 793);
-            $slide2Id = random_int(777, 793);
-            while ($slide2Id == $slide1Id){
-                $slide2Id = random_int(777, 793);
-            }
-            $slide3Id = random_int(777, 793);
-            while ($slide3Id == $slide2Id || $slide3Id == $slide1Id){
-                $slide3Id = random_int(777, 793);
-            }
             ?>
             <?php if( $the_query->have_posts() ): ?>
         <?php // while ( $the_query->have_posts() ) : $the_query->the_post(); ?>
@@ -209,58 +207,61 @@ get_header();
                     <img class="prevSlide" src="<?php echo get_template_directory_uri();?>/liaisons/images/arrow.svg" alt="" style="transform: rotate(180deg)">
                     <ul class="slider__list">
                         <li class="slide" data-slide="1">
+                            <?php $the_query->the_post(); ?>
                             <div class="slide__entete">
-                                <h3 class="slide__title"><?php echo get_field("temoin",$slide1Id);?></h3>
-                                <span class="slide__cours"><?php echo get_field("annee_diplomation",$slide1Id);?></span>
+                                <h3 class="slide__title"><?php echo get_field("temoin");?></h3>
+                                <span class="slide__cours"><?php echo get_field("annee_diplomation");?></span>
                             </div>
                             <div class="slide__corps">
                                 <?php
-                                $image_info = get_field("photo", $slide1Id);
+                                $image_info = get_field("photo");
                                 if($image_info!=null){
                                     ?>
                                     <img class="slide__corpsImage" src="<?= $image_info['sizes']['large']?>" alt="<?= $image_info['alt']?>">
                                 <?php }?>
                                 <div class="slide__corpsTexte">
-                                    <?php echo get_field("temoignage", $slide1Id);?>
-                                    <p class="poste"><?php echo get_field("poste", $slide1Id);?> <a href="<?php echo get_field("url_entreprise", $slide1Id);?>"><?php echo get_field("entreprise", $slide1Id);?></a></p>
+                                    <?php echo get_field("temoignage");?>
+                                    <p class="poste"><?php echo get_field("poste");?> <a href="<?php echo get_field("url_entreprise");?>"><?php echo get_field("entreprise");?></a></p>
                                 </div>
                             </div>
 
                         </li>
                         <li class="slide" data-slide="2" style="display: none">
+                            <?php $the_query->the_post(); ?>
                             <div class="slide__entete">
-                                <h3 class="slide__title"><?php echo get_field("temoin",$slide2Id);?></h3>
-                                <span class="slide__cours"><?php echo get_field("annee_diplomation",$slide2Id);?></span>
+                                <h3 class="slide__title"><?php echo get_field("temoin");?></h3>
+                                <span class="slide__cours"><?php echo get_field("annee_diplomation");?></span>
                             </div>
                             <div class="slide__corps">
                                 <?php
-                                $image_info = get_field("photo", $slide2Id);
+                                $image_info = get_field("photo");
                                 if($image_info!=null){
                                     ?>
                                     <img class="slide__corpsImage" src="<?= $image_info['sizes']['large']?>" alt="<?= $image_info['alt']?>">
                                 <?php }?>
                                 <div class="slide__corpsTexte">
-                                    <?php echo get_field("temoignage", $slide2Id);?>
-                                    <p class="poste"><?php echo get_field("poste", $slide2Id);?> <a href="<?php echo get_field("url_entreprise", $slide2Id);?>"><?php echo get_field("entreprise", $slide2Id);?></a></p>
+                                    <?php echo get_field("temoignage");?>
+                                    <p class="poste"><?php echo get_field("poste");?> <a href="<?php echo get_field("url_entreprise");?>"><?php echo get_field("entreprise");?></a></p>
                                 </div>
                             </div>
 
                         </li>
                         <li class="slide" data-slide="3" style="display: none">
+                            <?php $the_query->the_post(); ?>
                             <div class="slide__entete">
-                                <h3 class="slide__title"><?php echo get_field("temoin",$slide3Id);?></h3>
-                                <span class="slide__cours"><?php echo get_field("annee_diplomation",$slide3Id);?></span>
+                                <h3 class="slide__title"><?php echo get_field("temoin");?></h3>
+                                <span class="slide__cours"><?php echo get_field("annee_diplomation");?></span>
                             </div>
                             <div class="slide__corps">
                                 <?php
-                                $image_info = get_field("photo", $slide3Id);
+                                $image_info = get_field("photo");
                                 if($image_info!=null){
                                     ?>
                                     <img class="slide__corpsImage" src="<?= $image_info['sizes']['large']?>" alt="<?= $image_info['alt']?>">
                                 <?php }?>
                                 <div class="slide__corpsTexte">
-                                    <?php echo get_field("temoignage", $slide3Id);?>
-                                    <p class="poste"><?php echo get_field("poste", $slide3Id);?> <a href="<?php echo get_field("url_entreprise", $slide3Id);?>"><?php echo get_field("entreprise", $slide3Id);?></a></p>
+                                    <?php echo get_field("temoignage");?>
+                                    <p class="poste"><?php echo get_field("poste");?> <a href="<?php echo get_field("url_entreprise");?>"><?php echo get_field("entreprise");?></a></p>
                                 </div>
                             </div>
 

@@ -77,6 +77,11 @@
       font-size: 2rem;
       font-weight: 900;
       color: $blancPrimaire;
+
+      @media (max-width: 425px) {
+        display: none;
+        visibility: hidden;
+      }
     }
 
     .piedDePage__logo{

@@ -22,6 +22,7 @@ main{
   align-items: center;
 
   @media (max-width: 768px) {
+    margin: 100px 0;
     width: 70%;
   }
 
@@ -171,7 +172,7 @@ main{
     }
 
     .intro__description{
-      text-align: justify;
+      text-align: left;
       font-size: 1.5rem;
     }
 
@@ -326,6 +327,7 @@ main{
           }
         }
 
+
         &__corps{
           width: 100%;
           padding: 20px;
@@ -355,7 +357,7 @@ main{
           &Texte{
             color: $blancPrimaire;
             font-size: 1.25rem;
-            text-align: justify;
+            text-align: left;
             width: 50%;
             padding: 0 10px;
 
@@ -374,11 +376,7 @@ main{
               }
             }
 
-            & a{
-              color: $bleuPrimaire;
-            }
-
-            &>a{
+            &>a:last-child{
               text-decoration: none;
               color: $noir;
               background-color: $jaunePrimaire;
@@ -390,6 +388,10 @@ main{
               &:hover{
                 transform: scale(1.1);
               }
+            }
+
+            a{
+              color: $bleuPrimaire;
             }
 
             abbr{
@@ -479,7 +481,7 @@ main{
       }
 
       .contact__textes{
-        text-align: justify;
+        text-align: left;
         padding: 0 30px;
       }
 
@@ -492,6 +494,11 @@ main{
         color: $jaunePrimaire;
         text-align: center;
         transition: all 0.25s ease;
+
+        span{
+          color: $noir;
+          font-weight: 900;
+        }
 
         &:hover{
           filter: drop-shadow(0px 0px 3px $jaunePrimaire);

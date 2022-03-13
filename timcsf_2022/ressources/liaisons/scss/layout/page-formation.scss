@@ -10,9 +10,12 @@
   }
 
   &__textes{
+    display: flex;
+    flex-direction: column;
     width: 80%;
 
     .textes__title{
+        order: 1;
         width:fit-content;
         position: relative;
         font-size: 2.5rem;
@@ -42,14 +45,20 @@
     }
 
     .textes__description{
+      order: 2;
       text-align: justify;
     }
 
     .boutons{
+      order: 3;
       margin: 50px 0;
       display: flex;
       justify-content: space-between;
       align-items: center;
+
+      @media (max-width: 768px) {
+        margin: 50px 0 0;        order: 4;
+      }
 
       button{
         filter: opacity(30%);
@@ -101,6 +110,7 @@
     }
 
     a{
+      order: 4;
       margin: auto;
       width: fit-content;
       display: flex;
@@ -113,6 +123,10 @@
       padding: 20px;
       border-radius: 10px;
       transition: all 0.25s ease;
+
+      @media (max-width: 768px) {
+        order: 3;
+      }
 
       &:hover{
         background-color: $blancPrimaire;
@@ -256,6 +270,10 @@
     justify-content: space-between;
     align-items: center;
 
+    @media (max-width: 768px) {
+      flex-direction: column;
+    }
+
     .medias{
       width: 50%;
       display: grid;
@@ -267,6 +285,10 @@
             "a a"
             "a a"
             "b c";
+
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       video{
         width: 100%;
@@ -289,6 +311,9 @@
 
     .stats{
       width: 40%;
+      @media (max-width: 768px) {
+        width: 100%;
+      }
 
       &1,&2,&3,&4{
         display: flex;
@@ -334,6 +359,7 @@
 
   .slide{
     height: auto !important;
+    max-height: fit-content;
 
     .poste{
       font-style: italic;
@@ -386,6 +412,15 @@
     grid-template-areas:
             "a c"
             "b c";
+
+    @media (max-width: 768px) {
+      grid-template-columns: 1fr;
+      grid-template-rows: repeat(2, .5fr) / 1fr;
+      grid-template-areas:
+            "a"
+            "b"
+            "c";
+    }
 
     fieldset{
       padding: 50px;
@@ -527,7 +562,7 @@
     width: 45%;
 
     @media (max-width: 1024px) {
-      width: 100%
+      width: 100%;
     }
 
     h2{
@@ -559,6 +594,10 @@
         padding: 10px;
         border-radius: 10px;
         transition: all 0.25s ease;
+
+        @media (max-width: 768px) {
+          margin: auto;
+        }
 
         &:hover{
           background-color: $blancPrimaire;

@@ -1,0 +1,14 @@
+.link{
+  margin-top: 100px;
+  text-decoration: none;
+  color: $noir;
+  border-radius: 10px;
+  background-color: $jaunePrimaire;
+  padding: 10px;
+  border: solid $jaunePrimaire;
+  transition: all 0.25s ease;
+
+  &:hover{
+    background-color: $blancPrimaire;
+  }
+}

@@ -99,8 +99,8 @@ get_header();
                     // Envoyer courriel avec paramètres
                     // Trouver l'adresse du destinataire
                     // $post = get_post($destinataire);
-                    // $to=get_field('courriel', $destinataire);
-                    $to = get_option('admin_email');
+                    $to=get_field('courriel', $destinataire);
+                    //$to = get_option('admin_email');
                     $subject = $nom . " a envoyé un message depuis le site " . get_bloginfo('name');
                     $headers = 'De: ' . $courriel . "\r\n" .
                         'Répondre à: ' . $courriel . "\r\n";
@@ -166,10 +166,10 @@ get_header();
                         <span><?php echo get_field("tel",48);?></span>
                     </div>
                 </div>
-                <a href="#"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoTwitterJaune.svg" alt=""></a>
+                <a href="<?php echo get_field("url",1329);?>"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoTwitterJaune.svg" alt=""></a>
             </div>
             <div class="ligne">
-                <a href="#"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoFacebookJaune.svg" alt=""></a>
+                <a href="<?php echo get_field("url",1331);?>"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoFacebookJaune.svg" alt=""></a>
                 <div class="responsable">
                     <div class="textes">
                         <h3><?php echo get_field("prenom",49);?> <?php echo get_field("nom",49);?></h3>
@@ -202,10 +202,10 @@ get_header();
                         <span><?php echo get_field("tel",50);?></span>
                     </div>
                 </div>
-                <a href="#"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoLinkedinJaune.svg" alt=""></a>
+                <a href="<?php echo get_field("url",1333);?>"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoLinkedinJaune.svg" alt=""></a>
             </div>
             <div class="ligne">
-                <a href="#"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoInstagramJaune.svg" alt=""></a>
+                <a href="<?php echo get_field("url",1335);?>"><img src="<?php echo get_template_directory_uri();?>/liaisons/images/logoInstagramJaune.svg" alt=""></a>
                 <div class="responsable">
                     <div class="textes">
                         <h3><?php echo get_field("prenom",51);?> <?php echo get_field("nom",51);?></h3>

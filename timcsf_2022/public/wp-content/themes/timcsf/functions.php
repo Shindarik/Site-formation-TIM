@@ -235,45 +235,6 @@
         register_post_type( 'stages', $args );
     }
 
-    function tim_filtres_custom_post() {
-
-        //On rentre les différentes dénominations de notre article personnalisé type
-        //qui seront affichées dans l'interface administrative...
-        $labels = array(
-            // Le nom au pluriel
-            'name'                => _x( 'Section Projets Filtres ', 'Post Type General Name'),
-            // Le nom au singulier
-            'singular_name'       => _x( 'Filtres projets - sections', 'Post Type Singular Name'),
-            // Le libellé affiché dans le menu
-            'menu_name'           => __( 'Projets filtres - sections'),
-            //Les différents libellés de l'interface administrative
-            'all_items'           => __( 'Les filtres de la page projets'),
-            'view_item'           => __( 'Voir les sections formation'),
-            'add_new_item'        => __( 'Ajouter une nouvelle section'),
-            'add_new'             => __( 'Ajouter'),
-            'edit_item'           => __( 'Editer une section'),
-            'update_item'         => __( 'Modifier une section'),
-            'search_items'        => __( 'Rechercher une section'),
-            'not_found'           => __( 'Non trouvé'),
-            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
-        );
-
-        //On peut définir ici d'autres options pour notre type d'article personnalisé
-        $args = array(
-            'label'               => __( 'Sections - Projets Filtres'),
-            'description'         => __( 'Toutes les sections de projets '),
-            'labels'              => $labels,
-            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
-                'comments', 'revisions', 'custom-fields', ),
-            'hierarchical'        => false,
-            'public'              => true,
-            'has_archive'         => true,
-            'rewrite'			  => array( 'slug' => 'filtres'),
-        );
-
-        register_post_type( 'filtres', $args );
-    }
-
     function tim_finissants_custom_post() {
 
         //On rentre les différentes dénominations de notre article personnalisé type
@@ -352,14 +313,53 @@
         register_post_type( 'cours', $args );
     }
 
+    function tim_social_custom_post() {
+
+        //On rentre les différentes dénominations de notre article personnalisé type
+        //qui seront affichées dans l'interface administrative...
+        $labels = array(
+            // Le nom au pluriel
+            'name'                => _x( 'Les Médias sociaux ', 'Post Type General Name'),
+            // Le nom au singulier
+            'singular_name'       => _x( 'Médias sociaux', 'Post Type Singular Name'),
+            // Le libellé affiché dans le menu
+            'menu_name'           => __( 'Les Médias sociaux'),
+            //Les différents libellés de l'interface administrative
+            'all_items'           => __( 'Les médias sociaux des TIM'),
+            'view_item'           => __( 'Voir les médias sociaux'),
+            'add_new_item'        => __( 'Ajouter un média social'),
+            'add_new'             => __( 'Ajouter'),
+            'edit_item'           => __( 'Editer un média social'),
+            'update_item'         => __( 'Modifier un média social'),
+            'search_items'        => __( 'Rechercher un média social'),
+            'not_found'           => __( 'Non trouvé'),
+            'not_found_in_trash'  => __( 'Non trouvé dans la corbeille'),
+        );
+
+        //On peut définir ici d'autres options pour notre type d'article personnalisé
+        $args = array(
+            'label'               => __( 'Les médias sociaux'),
+            'description'         => __( 'Tout les médias sociaux '),
+            'labels'              => $labels,
+            'supports'            => array( 'title', 'editor', 'excerpt', 'author', 'thumbnail',
+                'comments', 'revisions', 'custom-fields', ),
+            'hierarchical'        => false,
+            'public'              => true,
+            'has_archive'         => true,
+            'rewrite'			  => array( 'slug' => 'social'),
+        );
+
+        register_post_type( 'social', $args );
+    }
+
     add_action( 'init', 'tim_responsable_custom_post', 0 );
     add_action( 'init', 'tim_accueil_custom_post', 0 );
     add_action( 'init', 'tim_formation_custom_post', 0 );
     add_action( 'init', 'tim_stages_custom_post', 0 );
+    add_action( 'init', 'tim_social_custom_post', 0 );
     add_action( 'init', 'tim_projets_custom_post', 0 );
     add_action( 'init', 'tim_finissants_custom_post', 0 );
     add_action( 'init', 'tim_cours_custom_post', 0 );
-    add_action( 'init', 'tim_filtres_custom_post', 0 );
     add_action( 'init', 'tim_temoignages_custom_post', 0 );
 
     add_theme_support('post-thumbnails');
